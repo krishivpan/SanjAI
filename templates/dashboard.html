@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <header class="header">
+        <a href="{{url_for('dashboard')}}" class="logo">🤓 SanjAi</a>
+
+        <nav class="navbar">
+            <a href="{{url_for('todo')}}">TODOs</a>
+            <a href="{{url_for('about')}}">About Us</a>
+            <a href="https://www.linkedin.com/in/krishiv-panchal/" target="_blank">Author</a>
+            <a href="{{url_for('logout')}}">Logout</a>
+        </nav>
+    </header>
+
+    <div class="prompt">
+        <div class="input-box">
+            <form autocomplete="off" method="POST" action="">
+                {{ form.hidden_tag() }}
+                {{ form.prompt }}
+                {{ form.submit }}
+            </form>
+        </div>
+        <p>
+            {{ variable }}
+        </p>
+        <div class="quiz-btn">
+            <a href="{{url_for('quiz')}}">Quiz Me!</a>
+        </div>
+    </div>
+    
+
+</body>
+</html>

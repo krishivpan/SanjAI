@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Quiz</title>
+</head>
+<body>
+    <header class="header">
+        <a href="{{url_for('dashboard')}}" class="logo">🤓 SanjAi</a>
+
+        <nav class="navbar">
+            <a href="{{url_for('todo')}}">TODOs</a>
+            <a href="{{url_for('about')}}">About Us</a>
+            <a href="https://www.linkedin.com/in/krishiv-panchal/" target="_blank">Author</a>
+            <a href="{{url_for('logout')}}">Logout</a>
+        </nav>
+    </header>
+    <div class="quiz">
+            
+        <h1>Quiz</h1>
+
+        <p>{{ question }}</p>
+
+        <form id="quizForm">
+            {% for choice in choices %}
+                <input type="radio" name="answer" value="{{ choice }}" required>
+                {{ choice }}<br>
+            {% endfor %}
+            <input type="button" value="Submit" onclick="submitForm()">
+        </form>
+
+        <p id="test"></p>
+        
+        <div id="quizResult"></div>
+    </div>
+    
+    <script>
+        function submitForm() {
+            var formData = $('#quizForm').serialize();
+            document.getElementById("test").innerHTML = "{{ correct_answer }}";
+
+            $.ajax({
+                type: 'POST',
+                url: "{{ url_for('quiz') }}",
+                data: formData,
+                success: function(response) {
+                    $('#quizResult').html(response);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+    

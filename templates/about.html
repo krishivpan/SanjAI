@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <title>About Us</title>
+</head>
+<body>
+    <header class="header">
+        <a href="{{url_for('dashboard')}}" class="logo">🤓 SanjAi</a>
+
+        <nav class="navbar">
+            <a href="{{url_for('todo')}}">TODOs</a>
+            <a href="{{url_for('about')}}">About Us</a>
+            <a href="https://www.linkedin.com/in/krishiv-panchal/" target="_blank">Author</a>
+            <a href="{{url_for('logout')}}">Logout</a>
+        </nav>
+    </header>
+
+    <div class="info">
+        <h1>About Us</h1>
+        <p>Welcome to SanjAi, your personalized learning companion powered by cutting-edge artificial intelligence. At SanjAi, we are dedicated 
+            to revolutionizing the education landscape by providing students with an innovative and effective way to enhance their learning experience.
+        </p>
+        <br>
+        <h1>Our Mission</h1>
+        <p>
+            Our mission is to empower students to achieve their full potential by offering personalized, adaptive, and interactive learning support. 
+            We aim to provide a unique and tailored learning experience for each student, helping them excel in their academic pursuits.
+        </p>
+        <br>
+        <h1>Our Commitment</h1>
+        <p>
+            We are committed to continuously improving and evolving our AI tutoring capabilities to meet the diverse needs of students and educators. 
+            Our goal is to create a unique learning journey for each student, fostering a deeper understanding of the subjects and topics they are passionate about.
+        </p>
+        <br>
+        <p>
+            <b>DISCLAIMER:</b> This page was written entirely by SanjAi. Another reason why we're so great.
+        </p>
+    </div>
+</body>
+</html>

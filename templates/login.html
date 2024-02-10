@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- <div class="wrapper">
+        <form action="">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+                <input type="password" placeholder="Password" required>
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    {{ form.username }}
+                    {{ form.password }}
+                    {{ form.submit }}
+                </form>
+
+                <a href="{{url_for('register')}}">Don't have an account? Sign up.</a><br>
+            </div>
+            <br>
+            <div class="register-link">
+                <p>Don't have an account? <a href="{{url_for('register')}}">Register</a></p>
+            </div>
+        </form>
+    </div> -->
+
+    <!-- This is the old way to link the database to the form, after css find a way to link the user and pass -->
+    <!-- <h1>Login</h1> -->
+
+    <div class="wrapper">
+        <h1>Login</h1>
+        <div class="input-box">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                {{ form.username }}
+                {{ form.password }}
+                {{ form.submit }}
+            </form> 
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="register-link">
+            <p>Don't have an account? <a href="{{url_for('register')}}">Register</a></p>
+        </div>
+    </div>
+    
+</body>
+</html>
